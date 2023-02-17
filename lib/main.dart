@@ -62,7 +62,7 @@ class NavDrawer extends StatelessWidget {
                     fit: BoxFit.fill,
                     image: AssetImage('assets/images/cover.jpg'))),
             child: Text(
-              'Side menu',
+              'Chekker',
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
           ),
