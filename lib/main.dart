@@ -3,11 +3,19 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String btnName = 'Read More';
+  int currentIndex = 0;
 
   // This widget is the root of your application.
   @override
@@ -15,15 +23,64 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        drawer: NavDrawer(),
+        // drawer: NavDrawer(),
         appBar: AppBar(
           title: Text('Chekker'),
         ),
         body: Center(
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text('Click')
-        )),
+          child: SizedBox(
+            width: double.infinity,
+            height: double.infinity,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          btnName = 'Thanks';
+                        });
+                      },
+                      child: Text(btnName),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          btnName = 'Thanks';
+                        });
+                      },
+                      child: Text(btnName),
+                    ),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          btnName = 'Thanks';
+                        });
+                      },
+                      child: Text(btnName),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          btnName = 'Thanks';
+                        });
+                      },
+                      child: Text(btnName),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
         bottomNavigationBar: BottomNavigationBar(
           // ignore: prefer_const_literals_to_create_immutables
           items: [
@@ -40,6 +97,12 @@ class MyApp extends StatelessWidget {
               icon: Icon(Icons.settings),
             ),
           ],
+          currentIndex: currentIndex,
+          onTap: (int index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
         ),
       ),
     );
