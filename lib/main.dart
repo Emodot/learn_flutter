@@ -28,58 +28,65 @@ class _MyAppState extends State<MyApp> {
           title: Text('Chekker'),
         ),
         body: Center(
-          child: SizedBox(
-            width: double.infinity,
-            height: double.infinity,
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          btnName = 'Thanks';
-                        });
-                      },
-                      child: Text(btnName),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          btnName = 'Thanks';
-                        });
-                      },
-                      child: Text(btnName),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          btnName = 'Thanks';
-                        });
-                      },
-                      child: Text(btnName),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          btnName = 'Thanks';
-                        });
-                      },
-                      child: Text(btnName),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+          child: currentIndex == 0
+              ? Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  color: Colors.orange,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                foregroundColor: Colors.white,
+                                backgroundColor: Colors.green),
+                            onPressed: () {
+                              setState(() {
+                                btnName = 'Thanks';
+                              });
+                            },
+                            child: Text(btnName),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                btnName = 'Thanks';
+                              });
+                            },
+                            child: Text(btnName),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                btnName = 'Thanks';
+                              });
+                            },
+                            child: Text(btnName),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                btnName = 'Thanks';
+                              });
+                            },
+                            child: Text(btnName),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              : Image.asset(
+                  'images/photo-1495344517868-8ebaf0a2044a.jpeg'),
         ),
         bottomNavigationBar: BottomNavigationBar(
           // ignore: prefer_const_literals_to_create_immutables
